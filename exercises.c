@@ -89,7 +89,7 @@ void eliminaElementos(List *L, int elem) {
     while (i < size) {
         if (*dato == elem) {
             popCurrent(L);
-            size--; // Reducir el tamaño de la lista después de eliminar un elemento
+            size--;
         } else {
             dato = (int*)next(L);
             i++;

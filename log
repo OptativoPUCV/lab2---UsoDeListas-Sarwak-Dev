@@ -36,3 +36,12 @@ Thu 21 Mar 2024 04:57:14 PM UTC:
  tests:  2|3
 total_score: 20/70
 7f1f008
+Thu 21 Mar 2024 05:45:57 PM UTC: 
+ exercises.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:5:
+exercises.c:94:1: error: expected identifier or ‘(’ before ‘}’ token
+   94 | }
+      | ^
+Compilation failed
+067976d

@@ -8,3 +8,14 @@ Thu 21 Mar 2024 04:49:14 PM UTC:
  tests:  1|4
 total_score: 10/70
 d5a7c57
+Thu 21 Mar 2024 04:56:30 PM UTC: 
+ exercises.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘sumaLista’:
+exercises.c:69:10: error: unused variable ‘dato’ [-Werror=unused-variable]
+   69 |     int* dato = (int*)next(L);
+      |          ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+51b3b02

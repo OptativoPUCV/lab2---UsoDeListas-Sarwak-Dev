@@ -85,7 +85,7 @@ void eliminaElementos(List *L, int elem) {
   int size = get_size(L);
   int *dato = (int*)first(L);
 
-    for (int i = 0; i < size;) {
+    for (int i = 0; i <= size;) {
       if (*dato == elem) {
         popCurrent(L);
         size--;
@@ -95,9 +95,6 @@ void eliminaElementos(List *L, int elem) {
         i++;
       }
 
-      if (dato == NULL) 
-        break;
-    }
 }
 
 

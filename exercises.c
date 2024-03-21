@@ -94,6 +94,9 @@ void eliminaElementos(List *L, int elem) {
         dato = (int*)next(L);
         i++;
       }
+
+      if (dato == NULL) 
+        break;
     }
 }
 

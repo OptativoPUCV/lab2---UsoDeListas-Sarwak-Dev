@@ -122,3 +122,14 @@ Thu 21 Mar 2024 05:58:03 PM UTC:
  tests:  2|3
 total_score: 20/70
 8034ef9
+Thu 21 Mar 2024 05:59:25 PM UTC: 
+ exercises.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:88:29: error: expected ‘;’ before ‘)’ token
+   88 |     for (int i = 0; i < size) {
+      |                             ^
+      |                             ;
+Compilation failed
+8952a0e

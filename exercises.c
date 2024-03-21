@@ -90,8 +90,8 @@ void eliminaElementos(List*L, int elem){
         popCurrent(L);
       }
     }
-  }
 }
+
 
 /*
 Ejercicio 4.

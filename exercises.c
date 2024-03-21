@@ -82,21 +82,18 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List *L, int elem) {
-    int size = get_size(L);
-    int i = 0;
-    int *dato = (int*)first(L);
+  int size = get_size(L);
+  int *dato = (int*)first(L);
 
-    while (i < size) {
-        if (*dato == elem) {
-            popCurrent(L);
-            // Actualizar el puntero dato solo si no se ha alcanzado el final de la lista
-            if (i < size - 1) 
-                dato = (int*)next(L);
-            size--; // Reducir el tamaño de la lista después de eliminar un elemento
-        } else {
-            dato = (int*)next(L);
-            i++; // Incrementar el contador solo si no se elimina el elemento
-        }
+    for (int i = 0; i < size;) {
+      if (*dato == elem) {
+        popCurrent(L);
+        size--;
+      }
+      else {
+        dato = (int*)next(L);
+        i++;
+      }
     }
 }
 

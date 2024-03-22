@@ -140,7 +140,14 @@ int parentesisBalanceados(char *cadena) {
   char dato;
   
   while (cadena[count] != '\0') {
-    if (cadena[count] == '(') {
+    if (cadena[count] == ')' || cadena[count] == ']' || cadena[count] == '}') {
+      if (cadena != NULL) {
+        if (cadena[count] == *(char*)top(P)) {
+          pop(top(P));
+        }
+      }
+    }
+    else {
       dato = cadena[count];
       push(P, &dato);
     }

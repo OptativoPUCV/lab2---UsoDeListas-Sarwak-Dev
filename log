@@ -840,3 +840,14 @@ Fri 22 Mar 2024 10:20:59 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 df25daa
+Fri 22 Mar 2024 10:28:59 PM UTC: 
+ exercises.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:117:9: error: unused variable ‘current’ [-Werror=unused-variable]
+  117 |   void* current;
+      |         ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+185f2c0

@@ -137,7 +137,7 @@ int parentesisBalanceados(char *cadena) {
 
   int count = 0;
   Stack* P = create_stack();
-  char* dato;
+  char dato;
   
   while (cadena[count] != '\0') {
     if (cadena[count] == '(') {

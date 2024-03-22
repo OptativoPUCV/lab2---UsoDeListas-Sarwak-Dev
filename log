@@ -933,3 +933,14 @@ exercises.c:144:13: error: ‘dato’ may be used uninitialized [-Werror=maybe-u
 cc1: all warnings being treated as errors
 Compilation failed
 eaa8b87
+Fri 22 Mar 2024 10:58:11 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:144:12: error: assignment to ‘char *’ from ‘char’ makes pointer from integer without a cast [-Werror=int-conversion]
+  144 |       dato = cadena[count];
+      |            ^
+cc1: all warnings being treated as errors
+Compilation failed
+b6b3ea3

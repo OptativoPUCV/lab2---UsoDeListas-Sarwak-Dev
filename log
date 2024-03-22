@@ -887,3 +887,14 @@ Fri 22 Mar 2024 10:39:06 PM UTC:
  tests:  4|1
 total_score: 50/70
 f9b6204
+Fri 22 Mar 2024 10:48:01 PM UTC: 
+ exercises.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:138:7: error: unused variable ‘balanceados’ [-Werror=unused-variable]
+  138 |   int balanceados = 0;
+      |       ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+476e8c4

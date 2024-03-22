@@ -129,24 +129,40 @@ void copia_pila(Stack* P1, Stack* P2) {
 /*
 Ejercicio 5.
 La función verifica si la cadena de entrada tiene sus 
-paraéntesis balanceados. Retorna 1 si están balanceados,
+paréntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
-
 int parentesisBalanceados(char *cadena) {
+    int count = 0;
+    Stack* P = create_stack();
+    char dato;
 
-  int count = 0;
-  Stack* P = create_stack();
-  char dato;
-  
-  while (cadena[count] != '\0') {
-    if (cadena[count] == '(') {
-      dato = cadena[count];
-      push(P, dato);
+    while (cadena[count] != '\0') {
+        if (cadena[count] == '(') {
+            dato = cadena[count];
+            push(&P, dato);
+        } else if (cadena[count] == ')') {
+            // Si encontramos un paréntesis de cierre
+            // Verificamos si la pila está vacía
+            if (P == NULL) {
+                // Si la pila está vacía y encontramos un paréntesis de cierre
+                // significa que la cadena no está balanceada
+                return 0;
+            } else {
+                // Si la pila no está vacía, desapilamos un paréntesis de apertura
+                // correspondiente al paréntesis de cierre actual
+                pop(&P);
+            }
+        }
+        count++;
     }
-    count++;
-  }
-    
-  return 0;
+
+    // Después de recorrer toda la cadena, verificamos si la pila está vacía
+    // Si está vacía, todos los paréntesis de apertura tienen su correspondiente cierre
+    if (P == NULL) {
+        return 1; // La cadena está balanceada
+    } else {
+        return 0; // La cadena no está balanceada
+    }
 }
 

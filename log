@@ -851,3 +851,9 @@ exercises.c:117:9: error: unused variable ‘current’ [-Werror=unused-variable
 cc1: all warnings being treated as errors
 Compilation failed
 185f2c0
+Fri 22 Mar 2024 10:29:33 PM UTC: 
+ exercises.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  3|2
+total_score: 40/70
+84754df

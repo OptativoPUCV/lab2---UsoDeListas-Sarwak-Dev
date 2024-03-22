@@ -145,11 +145,11 @@ int parentesisBalanceados(char *cadena) {
     else if (cadena[i] == '[') 
       count += 3;
     else if (cadena[i] == ')')  
-      count++;
+      count--;
     else if (cadena[i] == '}') 
-      count += 2;
+      count -= 2;
     else if (cadena[i] == ']') 
-      count += 3;
+      count -= 3;
       
     else 
       count--;

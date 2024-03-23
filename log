@@ -1257,3 +1257,21 @@ Sat 23 Mar 2024 12:21:22 AM UTC:
  tests:  4|1
 total_score: 50/70
 18a5593
+Sat 23 Mar 2024 12:21:29 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:155:18: error: passing argument 1 of ‘push’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  155 |             push(&P, &dato); // Pasar la dirección de dato a la función push
+      |                  ^~
+      |                  |
+      |                  Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |           ~~~~~~~^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fb751a3

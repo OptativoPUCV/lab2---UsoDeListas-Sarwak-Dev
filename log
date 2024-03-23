@@ -1795,3 +1795,24 @@ Sat 23 Mar 2024 01:53:49 PM UTC:
  tests:  6|1
 total_score: 60/70
 a0a94cb
+Sat 23 Mar 2024 01:58:06 PM UTC: 
+ exercises.c | 17 +++++++----------
+ 1 file changed, 7 insertions(+), 10 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:145:33: error: initialization of ‘char’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  145 |                 char top_char = pop(P);
+      |                                 ^~~
+exercises.c:157:21: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  157 |             push(P, dato);
+      |                     ^~~~
+      |                     |
+      |                     char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d2b0937

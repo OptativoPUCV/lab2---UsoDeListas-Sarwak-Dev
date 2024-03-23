@@ -1075,3 +1075,43 @@ Fri 22 Mar 2024 11:58:44 PM UTC:
  1 file changed, 3 insertions(+), 3 deletions(-)
  tests:  0|0
 d5ab0e2
+Sat 23 Mar 2024 12:01:34 AM UTC: 
+ exercises.c | 29 ++++++++++++++++-------------
+ 1 file changed, 16 insertions(+), 13 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:149:21: error: passing argument 1 of ‘pop’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  149 |                 pop(&P); // Desapilar el elemento superior de la pila
+      |                     ^~
+      |                     |
+      |                     Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:17:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   17 | void *pop(Stack *stack) { return popFront(stack); }
+      |           ~~~~~~~^~~~~
+In file included from test.c:5:
+exercises.c:154:18: error: passing argument 1 of ‘push’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  154 |             push(&P, cadena[count]); // Apilar el carácter de apertura en la pila
+      |                  ^~
+      |                  |
+      |                  Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |           ~~~~~~~^~~~~
+In file included from test.c:5:
+exercises.c:154:28: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  154 |             push(&P, cadena[count]); // Apilar el carácter de apertura en la pila
+      |                      ~~~~~~^~~~~~~
+      |                            |
+      |                            char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+337f5a7

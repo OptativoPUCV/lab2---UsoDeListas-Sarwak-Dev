@@ -1847,3 +1847,14 @@ exercises.c:145:21: error: unused variable ‘top_char’ [-Werror=unused-variab
 cc1: all warnings being treated as errors
 Compilation failed
 27220c2
+Sat 23 Mar 2024 01:59:58 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:145:20: error: unused variable ‘top_char’ [-Werror=unused-variable]
+  145 |               char top_char = *((char*)pop(P));
+      |                    ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9073b71

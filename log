@@ -1534,3 +1534,9 @@ exercises.c:93:21: note: each undeclared identifier is reported only once for ea
 cc1: all warnings being treated as errors
 Compilation failed
 fb5f4fb
+Sat 23 Mar 2024 12:41:24 AM UTC: 
+ exercises.c | 57 +++++++++++++++++++++------------------------------------
+ 1 file changed, 21 insertions(+), 36 deletions(-)
+ tests:  4|1
+total_score: 50/70
+d595966

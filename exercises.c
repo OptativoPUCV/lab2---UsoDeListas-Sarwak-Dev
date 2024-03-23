@@ -82,11 +82,11 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List *L, int elem) {
-    //int size = get_size(L);
+    int size = get_size(L);
     int i = 0;
     int *dato = (int*)first(L);
 
-    while (i != NULL) {
+    while (i < size) {
         if (*dato == elem) {
             popCurrent(L);
             
@@ -94,7 +94,7 @@ void eliminaElementos(List *L, int elem) {
                 dato = (int*)next(L);
             size--; 
         } 
-        
+          
         else {
           dato = (int*)next(L);
           i++; 
@@ -134,51 +134,36 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-  Stack* P = create_stack(); 
-  int i = 0;
-  int tamano = 0;
+    int count = 0;
+    Stack* P = create_stack();
+    char dato;
 
-  while(cadena[i] != '\0') {
-      if(cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[') {
-          push(P, &cadena[i]);
-          tamano++;
-      } 
-      else if(cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']') {
-          if(tamano == 0) {
-              while (i--) {
-                  push(P, &cadena[i]);
-              }
-              return 0;
-          }
-
-          char abierto = *(char*)pop(P);
-
-          tamano--;
-
-          if ((abierto == '(' && cadena[i] != ')') ||
-              (abierto == '[' && cadena[i] != ']') ||
-              (abierto == '{' && cadena[i] != '}')) {
-              while (tamano > 0) {
-                  pop(P);  
-                  tamano--;
-              }
-              while (i--) {
-                  push(P, &cadena[i]);
-              }
-              return 0;
-          }
-      }
-      i++;
+    while (cadena[count] != '\0') {
+        if (cadena[count] == ')' || cadena[count] == ']' || cadena[count] == '}') {
+            if (P != NULL) {
+                if ((cadena[count] == ')' && *(char*)top(P) != '(') ||
+                    (cadena[count] == ']' && *(char*)top(P) != '[') || 
+                    (cadena[count] == '}' && *(char*)top(P) != '{')) {
+                    return 0;
+                }
+                pop(P);
+            } 
+            
+            else {
+                return 0;
+            }
+        } 
+        
+        else {
+            dato = cadena[count];
+            push(P, &dato);
+        }
+        count++;
+    }
+  if (P != NULL) {
+    return 0;
   }
 
-  if(tamano == 0) {
-      return 1;
-  } else {
-      while (tamano > 0) {
-          pop(P);  
-          tamano--;
-      }
-      return 0;
-  }
+    return 1;
 }
 

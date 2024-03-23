@@ -136,7 +136,7 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena) {
     int count = 0;
     Stack* P = create_stack();
-    char dato;
+    char *dato;
     int vacio = 0;
 
     while (cadena[count] != '\0') {
@@ -147,7 +147,7 @@ int parentesisBalanceados(char *cadena) {
                     (cadena[count] == '}' && *(char*)top(P) != '{')) {
                     return 0;
                 }
-                popFront(P);
+                pop(P);
                 vacio--;
             } 
             
@@ -156,8 +156,8 @@ int parentesisBalanceados(char *cadena) {
         } 
         
         else {
-            dato = cadena[count];
-            pushFront(P, &dato);
+            *dato = cadena[count];
+            push(P, dato);
             vacio++;
         }
         count++;

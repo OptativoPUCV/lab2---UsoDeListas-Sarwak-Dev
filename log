@@ -1951,3 +1951,14 @@ Sat 23 Mar 2024 02:24:16 PM UTC:
  tests:  6|1
 total_score: 60/70
 007c188
+Sat 23 Mar 2024 02:28:33 PM UTC: 
+ exercises.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:159:19: error: ‘dato’ may be used uninitialized [-Werror=maybe-uninitialized]
+  159 |             *dato = cadena[count];
+      |             ~~~~~~^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+61e52b2

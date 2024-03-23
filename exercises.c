@@ -150,14 +150,16 @@ int parentesisBalanceados(char *cadena) {
             } else {
                 return 0;
             }
-        } else {
+        } 
+        
+        else {
             dato = cadena[count];
             push(P, &dato);
         }
         count++;
     }
 
-    if (P != NULL) {
+    if (P == NULL) {
         return 0;
     }
 

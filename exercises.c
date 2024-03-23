@@ -140,30 +140,26 @@ int parentesisBalanceados(char *cadena) {
 
     while (cadena[count] != '\0') {
         if (cadena[count] == ')' || cadena[count] == ']' || cadena[count] == '}') {
-            if (P != NULL) {
-                if ((cadena[count] == ')' && *(char*)top(P) != '(') ||
-                    (cadena[count] == ']' && *(char*)top(P) != '[') || 
-                    (cadena[count] == '}' && *(char*)top(P) != '{')) {
-                    return 0;
-                }
-                pop(P);
-            } 
-
-            else if ( P == NULL) {
-                return 0;
+            if (P == NULL) {
+                return 0; // Si la pila está vacía y encontramos un paréntesis de cierre, los paréntesis no están balanceados
             }
-        } 
-
-        else {
+            if ((cadena[count] == ')' && *(char*)top(P) != '(') ||
+                (cadena[count] == ']' && *(char*)top(P) != '[') || 
+                (cadena[count] == '}' && *(char*)top(P) != '{')) {
+                return 0; // Si el paréntesis de cierre no coincide con el paréntesis de apertura en el tope de la pila, los paréntesis no están balanceados
+            }
+            pop(P); // Desapilar el paréntesis de apertura correspondiente
+        } else {
             dato = cadena[count];
-            push(P, &dato);
+            push(P, &dato); // Apilar el paréntesis de apertura
         }
         count++;
     }
-  if (P != NULL) {
-    return 0;
-  }
 
-    return 1;
+    if (P != NULL) {
+        return 0; // Si la pila no está vacía al final, hay paréntesis de apertura sin su correspondiente cierre
+    }
+
+    return 1; // Todos los paréntesis están balanceados
 }
 

@@ -126,47 +126,32 @@ void copia_pila(Stack* P1, Stack* P2) {
   }
 }
 
-/*
-Ejercicio 5.
-La función verifica si la cadena de entrada tiene sus 
-paraéntesis balanceados. Retorna 1 si están balanceados,
-0 en caso contrario.
-*/
-
 int parentesisBalanceados(char *cadena) {
     int count = 0;
     Stack* P = create_stack();
     char dato;
-    int vacio = 0;
 
     while (cadena[count] != '\0') {
         if (cadena[count] == ')' || cadena[count] == ']' || cadena[count] == '}') {
-            if (vacio != 0) {
-                if ((cadena[count] == ')' && *(char*)top(P) != '(') ||
-                    (cadena[count] == ']' && *(char*)top(P) != '[') || 
-                    (cadena[count] == '}' && *(char*)top(P) != '{')) {
-                    return 0;
-                }
-                pop(P);
-                vacio--;
-            } 
-            
-            else if ( vacio == 0) {
-                return 0;
+            if (isEmpty(P)) {
+                return 0; // Si la pila está vacía y encontramos un paréntesis de cierre, los paréntesis no están balanceados
             }
-        } 
-        
-        else {
+            if ((cadena[count] == ')' && *(char*)top(P) != '(') ||
+                (cadena[count] == ']' && *(char*)top(P) != '[') || 
+                (cadena[count] == '}' && *(char*)top(P) != '{')) {
+                return 0; // Si el paréntesis de cierre no coincide con el paréntesis de apertura en el tope de la pila, los paréntesis no están balanceados
+            }
+            pop(P); // Desapilar el paréntesis de apertura correspondiente
+        } else {
             dato = cadena[count];
-            push(P, &dato);
-            vacio++;
+            push(P, &dato); // Apilar el paréntesis de apertura
         }
-        //count++;
+        count++;
     }
-  if (vacio != 0) {
-    return 0;
-  }
 
-    return 1;
+    if (!isEmpty(P)) {
+        return 0; // Si la pila no está vacía al final, hay paréntesis de apertura sin su correspondiente cierre
+    }
+
+    return 1; // Todos los paréntesis están balanceados
 }
-

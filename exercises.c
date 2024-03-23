@@ -142,30 +142,31 @@ int parentesisBalanceados(char *cadena) {
     while (cadena[count] != '\0') {
         if (cadena[count] == ')' || cadena[count] == ']' || cadena[count] == '}') {
             if (vacio != 0) {
-                if ((cadena[count] == ')' && *(char*)top(P) != '(') ||
-                    (cadena[count] == ']' && *(char*)top(P) != '[') || 
-                    (cadena[count] == '}' && *(char*)top(P) != '{')) {
+              char top_char = *((char*)top(P));
+                if ((cadena[count] == ')' && top_char != '(') ||
+                    (cadena[count] == ']' && top_char != '[') || 
+                    (cadena[count] == '}' && top_char != '{')) {
                     return 0;
                 }
                 pop(P);
                 vacio--;
             } 
-            
+
             else
                 return 0;
         } 
-        
+
         else {
             dato = cadena[count];
-            push(P, *dato);
+            push(P, &dato);  // Pasar dato directamente
             vacio++;
         }
         count++;
     }
-  
-  if (vacio != 0) {
-    return 0;
-  }
+
+    if (vacio != 0) {
+        return 0;
+    }
 
     return 1;
 }

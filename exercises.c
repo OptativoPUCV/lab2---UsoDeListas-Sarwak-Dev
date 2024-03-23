@@ -160,7 +160,7 @@ int parentesisBalanceados(char *cadena) {
         }
         count++;
     }
-  if (P != NULL) {
+  if (P == NULL) {
     return 0;
   }
 

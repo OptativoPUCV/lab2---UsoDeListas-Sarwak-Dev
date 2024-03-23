@@ -1519,3 +1519,18 @@ Sat 23 Mar 2024 12:33:48 AM UTC:
  tests:  9|0
 total_score: 70/70
 899b681
+Sat 23 Mar 2024 12:40:44 AM UTC: 
+ exercises.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:89:14: error: comparison between pointer and integer [-Werror]
+   89 |     while (i != NULL) {
+      |              ^~
+exercises.c:93:21: error: ‘size’ undeclared (first use in this function)
+   93 |             if (i < size - 1)
+      |                     ^~~~
+exercises.c:93:21: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+fb5f4fb

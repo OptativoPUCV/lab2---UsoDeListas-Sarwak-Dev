@@ -82,11 +82,11 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List *L, int elem) {
-    int size = get_size(L);
+    //int size = get_size(L);
     int i = 0;
     int *dato = (int*)first(L);
 
-    while (i < size) {
+    while (i != NULL) {
         if (*dato == elem) {
             popCurrent(L);
             
@@ -94,7 +94,7 @@ void eliminaElementos(List *L, int elem) {
                 dato = (int*)next(L);
             size--; 
         } 
-          
+        
         else {
           dato = (int*)next(L);
           i++; 
@@ -142,8 +142,9 @@ int parentesisBalanceados(char *cadena) {
       if(cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[') {
           push(P, &cadena[i]);
           tamano++;
-      } else if(cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']') {
-          if(tamano == 0){
+      } 
+      else if(cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']') {
+          if(tamano == 0) {
               while (i--) {
                   push(P, &cadena[i]);
               }

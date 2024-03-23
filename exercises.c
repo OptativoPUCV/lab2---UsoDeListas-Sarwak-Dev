@@ -146,13 +146,13 @@ int parentesisBalanceados(char *cadena) {
                     (cadena[count] == '}' && *(char*)top(P) != '{')) {
                     return 0;
                 }
-                pop(&P);
+                pop(P);
             } else {
                 return 0;
             }
         } else {
             dato = cadena[count];
-            push(&P, &dato); // Pasar la dirección de dato a la función push
+            push(P, &dato); // Pasar la dirección de dato a la función push
         }
         count++;
     }

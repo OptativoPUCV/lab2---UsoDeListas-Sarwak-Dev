@@ -1968,3 +1968,13 @@ Sat 23 Mar 2024 02:29:46 PM UTC:
  tests:  6|1
 total_score: 60/70
 def8152
+Sat 23 Mar 2024 02:30:31 PM UTC: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:160:21: error: invalid type argument of unary ‘*’ (have ‘int’)
+  160 |             push(P, *dato);
+      |                     ^~~~~
+Compilation failed
+f12f4b9

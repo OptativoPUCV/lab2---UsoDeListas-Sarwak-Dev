@@ -1611,3 +1611,16 @@ exercises.c:159:10: error: implicit declaration of function ‘isEmpty’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 efbaaba
+Sat 23 Mar 2024 12:50:31 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:143:27: error: expected ‘)’ before ‘{’ token
+  143 |             if (P == NULL {
+      |                ~          ^
+exercises.c:152:9: error: expected expression before ‘}’ token
+  152 |         } else {
+      |         ^
+Compilation failed
+83fa573

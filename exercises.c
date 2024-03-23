@@ -156,7 +156,7 @@ int parentesisBalanceados(char *cadena) {
         count++;
     }
 
-    if (!isEmpty(P)) {
+    if (P != NULL) {
         return 0;  // La pila no está vacía, lo que significa que hay paréntesis de apertura sin su correspondiente cierre
     }
 

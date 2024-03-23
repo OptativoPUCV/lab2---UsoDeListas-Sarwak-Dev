@@ -161,7 +161,7 @@ int parentesisBalanceados(char *cadena) {
             push(P, &dato);
             vacio++;
         }
-        count++;
+        //count++;
     }
   if (vacio != 0) {
     return 0;

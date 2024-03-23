@@ -1700,3 +1700,9 @@ exercises.c:136:17: error: implicit declaration of function ‘isEmpty’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 55a4421
+Sat 23 Mar 2024 01:04:28 AM UTC: 
+ exercises.c | 37 ++++++++++++++++++++++++++-----------
+ 1 file changed, 26 insertions(+), 11 deletions(-)
+ tests:  6|1
+total_score: 60/70
+20111e8

@@ -140,7 +140,7 @@ int parentesisBalanceados(char *cadena) {
 
     while (cadena[count] != '\0') {
         if (cadena[count] == ')' || cadena[count] == ']' || cadena[count] == '}') {
-            if (P == NULL {
+            if (P == NULL) {
                 return 0;  // La pila está vacía pero encontramos un paréntesis de cierre
             }
             if ((cadena[count] == ')' && *(char*)top(P) != '(') ||

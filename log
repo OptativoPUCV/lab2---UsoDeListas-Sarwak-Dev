@@ -2249,3 +2249,9 @@ exercises.c:159:18: error: assignment to ‘void *’ from ‘char’ makes poin
 cc1: all warnings being treated as errors
 Compilation failed
 6509094
+Sat 23 Mar 2024 02:48:34 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|1
+total_score: 50/70
+8af4075

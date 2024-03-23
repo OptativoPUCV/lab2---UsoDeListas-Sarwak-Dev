@@ -157,7 +157,7 @@ int parentesisBalanceados(char *cadena) {
         
         else {
             dato = cadena[count];
-            push(P, dato);
+            pushBack(P, &dato);
             vacio++;
         }
         count++;

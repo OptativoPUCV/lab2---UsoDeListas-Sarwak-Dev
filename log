@@ -2238,3 +2238,14 @@ Sat 23 Mar 2024 02:47:33 PM UTC:
  tests:  6|1
 total_score: 60/70
 44b6a85
+Sat 23 Mar 2024 02:47:49 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:159:18: error: assignment to ‘void *’ from ‘char’ makes pointer from integer without a cast [-Werror=int-conversion]
+  159 |             dato = cadena[count];
+      |                  ^
+cc1: all warnings being treated as errors
+Compilation failed
+6509094

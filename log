@@ -2132,3 +2132,97 @@ stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
 cc1: all warnings being treated as errors
 Compilation failed
 2fec4e3
+Sat 23 Mar 2024 02:34:47 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h: In function ‘push’:
+stack.h:11:55: error: passing argument 2 of ‘pushFront’ makes pointer from integer without a cast [-Werror=int-conversion]
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                                                       ^~~~
+      |                                                       |
+      |                                                       char
+In file included from exercises.c:6,
+                 from test.c:5:
+arraylist.h:17:31: note: expected ‘void *’ but argument is of type ‘char’
+   17 | void pushFront(List *L, void *dato);
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:120:14: error: passing argument 2 of ‘push’ makes integer from pointer without a cast [-Werror=int-conversion]
+  120 |     push(P3, dato);
+      |              ^~~~
+      |              |
+      |              void *
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                         ~~~~~^~~~
+In file included from test.c:5:
+exercises.c:123:14: error: passing argument 2 of ‘push’ makes integer from pointer without a cast [-Werror=int-conversion]
+  123 |     push(P1, dato);
+      |              ^~~~
+      |              |
+      |              void *
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                         ~~~~~^~~~
+In file included from test.c:5:
+exercises.c:124:14: error: passing argument 2 of ‘push’ makes integer from pointer without a cast [-Werror=int-conversion]
+  124 |     push(P2, dato);
+      |              ^~~~
+      |              |
+      |              void *
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                         ~~~~~^~~~
+test.c: In function ‘test_copia_pila’:
+test.c:169:17: error: passing argument 2 of ‘push’ makes integer from pointer without a cast [-Werror=int-conversion]
+  169 |        push(P1, dato);
+      |                 ^~~~
+      |                 |
+      |                 void *
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                         ~~~~~^~~~
+test.c:170:19: error: passing argument 2 of ‘push’ makes integer from pointer without a cast [-Werror=int-conversion]
+  170 |        push(Paux, dato);
+      |                   ^~~~
+      |                   |
+      |                   void *
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                         ~~~~~^~~~
+test.c:192:40: error: passing argument 2 of ‘push’ makes integer from pointer without a cast [-Werror=int-conversion]
+  192 |        if (dato2 != NULL) push(P2copy, dato2);
+      |                                        ^~~~~
+      |                                        |
+      |                                        void *
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                         ~~~~~^~~~
+test.c:193:39: error: passing argument 2 of ‘push’ makes integer from pointer without a cast [-Werror=int-conversion]
+  193 |        if (dato != NULL) push(P1copy, dato);
+      |                                       ^~~~
+      |                                       |
+      |                                       void *
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:30: note: expected ‘char’ but argument is of type ‘void *’
+   11 | void push(Stack *stack, char data) { pushFront(stack, data); }
+      |                         ~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4e4ff0f
